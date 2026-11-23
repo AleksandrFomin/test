@@ -9,39 +9,6 @@
     </style>
 </head>
 <body>
-    <h1>Keyboard event demo</h1>
-    <p>Нажмите любую клавишу – информация появится ниже.</p>
-    <div id="output">Ожидание ввода…</div>
-
-    <script>
-        // Добавляем обработчик к документу
-        document.addEventListener('keydown', function (event) {
-            // Основная информация о нажатой клавише
-            const key      = event.key;      // Символ клавиши (например, "a", "Enter")
-            const code     = event.code;     // Физический код клавиши (например, "KeyA", "Enter")
-            const keyCode  = event.keyCode;  // Устаревший, но иногда полезный числовой код
-
-            // Модификаторы
-            const modifiers = {
-                shift: event.shiftKey,
-                ctrl : event.ctrlKey,
-                alt  : event.altKey,
-                meta : event.metaKey   // Cmd / Win
-            };
-
-            // Формируем читаемый вывод
-            const modifiersList = Object.entries(modifiers)
-                .filter(([_, active]) => active)
-                .map(([name]) => name.toUpperCase())
-                .join(' + ') || 'None';
-
-            const line = `Key pressed: "${key}" (code: ${code}, keyCode: ${keyCode}) | Modifiers: ${modifiersList}`;
-
-            // Выводим в консоль и на страницу
-            console.log(line);
-            const out = document.getElementById('output');
-            out.textContent = line;
-        });
-    </script>
+    <a href="https://vk.ru/share.php?url=https%3A%2F%2Fwww.kinopoisk.ru%2Fmedia%2Farticle%2F4012210%2F&amp;title=50%20%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85%20%D0%B7%D0%B0%D1%80%D1%83%D0%B1%D0%B5%D0%B6%D0%BD%D1%8B%D1%85%20%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%BE%D0%B2%202026%20%D0%B3%D0%BE%D0%B4%D0%B0%3A%20%D1%87%D1%82%D0%BE%20%D0%B2%D1%8B%D1%88%D0%BB%D0%BE%20%D0%B8%20%D1%87%D1%82%D0%BE%20%D0%B5%D1%89%D0%B5%20%D0%B6%D0%B4%D0%B5%D0%BC%20%E2%80%94%20%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8%20%D0%BD%D0%B0%20%D0%9A%D0%B8%D0%BD%D0%BE%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B5" class="new-share-buttons__link new-share-buttons__link_service_vkontakte" rel="noopener noreferrer" target="_blank" aria-label="vkontakte" data-tid="8939a50e"></a>
 </body>
 </html>
